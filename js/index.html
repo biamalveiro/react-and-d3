@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Wit-Sharpening: D3</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <header class="text-center mt-16 mb-32">
+        <h1 class="text-2xl font-bold text-gray-800	">D3 @ vanilla JS</h1>
+        <h2 class="text-l text-gray-500	">Wit-Sharpening Sessions</h2>
+    </header>
+
+    <script>
+        const width = window.screen.width * 0.3
+        const height = width * (3/4)
+
+        const padding = 40
+
+        const vis = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .attr("class", "m-auto border border-gray-300")
+                    
+        const x = d3.scaleLinear().range([padding, width - padding])
+        const y = d3.scaleLinear().range([height - padding, padding])
+        
+        d3.json("potions.json").then((data) => {
+            data.forEach((d) => {
+                d["complexity"] = parseInt(d["complexity"])
+                d["brew_time_min"] = parseInt(d["brew_time_min"])
+            });
+
+            x.domain(d3.extent(data, (d) => d["brew_time_min"])).nice();
+            y.domain([0, d3.max(data, (d) => d["complexity"])]).nice();
+
+            const points = vis.selectAll("point")
+                .data(data)
+                .join("circle")
+                    .attr("r", 5)
+                    .attr("cx", (d) => x(d["brew_time_min"]))
+                    .attr("cy", (d) => y(d["complexity"]))
+                    .attr("fill", (d) => d.color)
+            
+            vis.append("g")
+                .attr("transform", `translate(${padding}, 0)`)
+                .call(d3.axisLeft(y))
+
+            vis.append("g")
+                .attr("transform", `translate(0, ${height - padding})`)
+                .call(d3.axisBottom(x)) 
+            
+            const labels = vis.append("g").attr("id", "labels");
+
+                
+            points.on("mouseover", function(e, d) {
+                const hoverPoint = d3.select(this)
+                            .raise()
+                            .call((point) => 
+                                point.transition().duration(800)
+                                .attr("r", 8)
+                                .style("stroke", "black") 
+                            )
+
+                labels.append("text")
+                    .text(d.potion)
+                    .attr("class", "text-xs")
+                    .style("text-anchor", "middle")
+                    .attr("transform", `translate(${hoverPoint.attr("cx")}, ${hoverPoint.attr("cy")})`)
+                    .attr("dy", -12)
+            })
+
+            points.on("mouseout", function(e, d) {
+                labels.selectAll("text").remove()
+                const hoverPoint = d3.select(this)
+                            .call((point) => 
+                                point.transition().duration(800)
+                                .attr("r", 5)
+                                .style("stroke", "none") 
+                            )
+            })
+        })
+    </script>
+</body>
+ 

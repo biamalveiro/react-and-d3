@@ -1,0 +1,98 @@
+[
+    {
+        "potion": "Baruffio’s Brain Elixir",
+        "brew_time_min": "720",
+        "complexity": "5",
+        "color": "green",
+        "ingredients": "Leaping Toadstools, Frog Brains, Runespoor eggs, Powdered dragon claw",
+        "effect": "Allegedly increases one's brain power"
+    },
+    {
+        "potion": "Fire Protection Potion",
+        "brew_time_min": "45",
+        "complexity": "2",
+        "color": "purple",
+        "ingredients": "Bursting mushrooms, Salamander blood, Wartcap powder",
+        "effect": "Protects drinker from fire"
+    },
+    {
+        "potion": "Amortentia",
+        "brew_time_min": "360",
+        "complexity": "7",
+        "color": "white",
+        "ingredients": "",
+        "effect": "Love Potion that causes a powerful infatuation or obsession in the drinker"
+    },
+    {
+        "potion": "Draught of Living Death",
+        "brew_time_min": "720",
+        "complexity": "10",
+        "color": "clear",
+        "ingredients": "Standard potioning water, Powdered Root of Asphodel, Infusion of Wormwood, Valerian root",
+        "effect": "Causes the drinker to fall into a deep, death-like slumber"
+    },
+    {
+        "potion": "Felix Felicis Potion",
+        "brew_time_min": "480",
+        "complexity": "8",
+        "color": "gold",
+        "ingredients": "Ashwinder egg, Squill bulb, Murtlap tentacle, Tincture of thyme, Occamy eggshell",
+        "effect": "Makes the drinker lucky"
+    },
+    {
+        "potion": "Polyjuice Potion",
+        "brew_time_min": "1440",
+        "complexity": "7",
+        "color": "brown",
+        "ingredients": "Leeches, Powdered bicorn horn, Knotgrass, Fluxweed, Hair of the person, Shredded Boomslang skin",
+        "effect": "Allows a human drinker to temporarily assume the form of another person"
+    },
+    {
+        "potion": "Wit-Sharpening Potion",
+        "brew_time_min": "240",
+        "complexity": "7",
+        "color": "purple",
+        "ingredients": "Ground scarab beetles, Cut ginger roots, Armadillo bile",
+        "effect": "Improves intellect"
+    },
+    {
+        "potion": "Wideye Potion",
+        "brew_time_min": "480",
+        "complexity": "2",
+        "color": "blue",
+        "ingredients": "Snake fangs, Standard Ingredient, Dried Billywig stings, Sprigs of Wolfsbane",
+        "effect": "Prevents sleeping, Awakens victim"
+    },
+    {
+        "potion": "Wolfsbane Potion",
+        "brew_time_min": "120",
+        "complexity": "8",
+        "color": "blue",
+        "ingredients": "Wolfsbane",
+        "effect": "Eases the symptoms of lycanthropy; prevents werewolves from losing their minds post-transformation."
+    },
+    {
+        "potion": "Hair-Raising Potion",
+        "brew_time_min": "120",
+        "complexity": "3",
+        "color": "green",
+        "ingredients": "Rat tails, Porcupine quills, Billywig stings",
+        "effect": "Raises hair up on end"
+    },
+    {
+        "potion": "Ageing Potion",
+        "brew_time_min": "600",
+        "complexity": "8",
+        "color": "green",
+        "ingredients": "Newt spleens , Bananas",
+        "effect": "Ages drinker temporarily"
+    },
+    {
+        "potion": "Draught of Peace",
+        "brew_time_min": "180",
+        "complexity": "9",
+        "color": "silver",
+        "ingredients": "Powdered moonstone, Syrup of Hellebore, Powdered Unicorn horn, Powdered Porcupine quills",
+        "effect": "Relieves anxiety"
+    }
+]
